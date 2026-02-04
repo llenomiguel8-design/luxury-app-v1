@@ -34,6 +34,7 @@ export default function PetPage() {
             />
 
             <br />
+            <h1>No Pet Selected!</h1>
             <Link to="/">
                 <button>Back to Home</button>
             </Link>

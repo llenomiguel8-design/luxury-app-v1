@@ -10,7 +10,12 @@ export const PetProvider = ({ children }) => {
     const [bondingLevel, setBondingLevel] = useState(0);
 
     const incrementBond = () => {
-        setBondingLevel(prev => prev + 1);
+        // Randomly add 1 or 2 to the bonding level
+        // Math.random() returns a random number between 0 and 1
+        // Math.floor() rounds down to the nearest integer
+        // Math.floor(Math.random() * 2) + 1 returns either 1 or 2
+        // So we add 1 or 2 to the bonding level
+        setBondingLevel(prev => prev + Math.floor(Math.random() * 2) + 1);
     }
 
     // Helper to reset everything when picking a new pet
