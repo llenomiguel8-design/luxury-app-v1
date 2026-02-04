@@ -4,7 +4,7 @@ import PetDisplay from "../../components/PetDisplay/PetDisplay";
 
 export default function PetPage() {
     // Grab the Global State from the Cloud
-    const { selectedPet, bondingLevel, incrementBond } = usePet();
+    const { selectedPet, bondingLevel, incrementBond, petName, bondTarget, savePetName } = usePet();
 
     // Guard Clause: If they came here directly without picking a pet
     if (!selectedPet) {
@@ -23,7 +23,7 @@ export default function PetPage() {
             <h1>My Companion</h1>
 
             <PetDisplay
-                name={selectedPet.name}
+                name={petName || selectedPet.name}
                 // We could pass the sprite too if PetDisplay supported it, 
                 // but for now let's just use the name and global bond level.
                 // Or better, let's update PetDisplay later to handle sprites!
@@ -31,6 +31,9 @@ export default function PetPage() {
                 mood={selectedPet.sprite}
                 bondingLevel={bondingLevel}
                 onBond={incrementBond}
+                bondTarget={bondTarget}
+                petName={petName}
+                onSaveName={savePetName}
             />
 
             <br />
