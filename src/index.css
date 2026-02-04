@@ -1,0 +1,6 @@
+/* Basic cleanup so things don't look broken */
+body {
+  font-family: sans-serif;
+  margin: 2rem;
+  background-color: #f0f0f0;
+}
